@@ -150,11 +150,11 @@ dataLayer = [];
                 {{ petition.side_text|html_sanitize|safe }}
             </div>
           {% endif %}
-          <p class="sign text-primary"><strong>Signez la pétition&nbsp;!</strong></p>
+          <p class="sign text-primary"><strong>Sign the petition&nbsp;!</strong></p>
           <div class="counter" id="counter">
             <p>
-              Déjà <span id="nb-signatures">{{ petition.signature_number }}</span> signatures.
-              Objectif : <span class="format-number">{{ petition.target }}</span>
+              Currently <span id="nb-signatures">{{ petition.signature_number }}</span> signatures.
+              Objective : <span class="format-number">{{ petition.target }}</span>
             </p>
             <div class="progress">
               <div class="progress-bar bg-primary" role="progressbar" id="progress-bar"
@@ -217,7 +217,7 @@ dataLayer = [];
                 {% endfor %}
 
                 <span class="eaSubmitResetButtonGroup" id="eaFormButtonGroup_1"><input
-                  type="submit" class="btn btn-primary eaSubmitButton" value="Signer"></span>
+                  type="submit" class="btn btn-primary eaSubmitButton" value="Sign"></span>
               </form>
             </div>
             <div class="reassurance" id="reassurance">
