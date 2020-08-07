@@ -201,7 +201,7 @@ TINYMCE_DEFAULT_CONFIG = {
 TINYMCE_INCLUDE_JQUERY = True
 
 #:| The name of your Pytition instance.
-SITE_NAME = "Pytition"
+SITE_NAME = "UL Petitions"
 
 #:| Whether you want to allow anyone to create an account and host petitions
 #:| on your Pytition instance.
