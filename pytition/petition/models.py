@@ -419,7 +419,7 @@ class Signature(models.Model):
     first_name = models.CharField(max_length=50, verbose_name=ugettext_lazy("First name"))
     last_name = models.CharField(max_length=50, verbose_name=ugettext_lazy("Last name"))
     phone = models.CharField(max_length=20, blank=True, verbose_name=ugettext_lazy("Phone number"))
-    email = models.EmailField(verbose_name=ugettext_lazy("Email address"))
+    email = models.EmailField(verbose_name=ugettext_lazy("Email address"))#validators=[validator_func]-val_func would be written inside this class
     confirmation_hash = models.CharField(max_length=128)
     confirmed = models.BooleanField(default=False, verbose_name=ugettext_lazy("Confirmed"))
     petition = models.ForeignKey(Petition, on_delete=models.CASCADE, verbose_name=ugettext_lazy("Petition"))
@@ -442,6 +442,10 @@ class Signature(models.Model):
 
     def confirm(self):
         self.confirmed = True
+
+    """def validate_UL_email(value):take care uncommenting as it is tab/space sensitive.
+        if (if_test_fails_Fail):
+            raise ValidationError('Not a valid University of Limerick email')"""
 
     def __str__(self):
         return html.unescape("[{}:{}] {} {}".format(self.petition.id, "OK" if self.confirmed else "..", self.first_name,
