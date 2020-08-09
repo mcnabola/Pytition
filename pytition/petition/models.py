@@ -450,7 +450,8 @@ class Signature(models.Model):
         fail = True
         value = self.email
         studentmailRegex = "^([0-9]{8}$)"
-        lecturerRegex = "^([\.a-zA-Z]){4,}$)"
+        lecturerRegex = "^[\.a-zA-Z]{4,20}$" #
+        # "^([\.a-zA-Z]){4,}$)"
         studentmail = "@studentmail.ul.ie"
         lecturer = "@ul.ie"
 
