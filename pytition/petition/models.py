@@ -420,7 +420,7 @@ class Signature(models.Model):
     first_name = models.CharField(max_length=50, verbose_name=ugettext_lazy("First name"))
     last_name = models.CharField(max_length=50, verbose_name=ugettext_lazy("Last name"))
     phone = models.CharField(max_length=20, blank=True, verbose_name=ugettext_lazy("Phone number"))
-    email = models.EmailField(verbose_name=ugettext_lazy("Email address"))#validators=[validate_UL_email]
+    email = models.EmailField(verbose_name=ugettext_lazy("Email address"))
     confirmation_hash = models.CharField(max_length=128)
     confirmed = models.BooleanField(default=False, verbose_name=ugettext_lazy("Confirmed"))
     petition = models.ForeignKey(Petition, on_delete=models.CASCADE, verbose_name=ugettext_lazy("Petition"))
@@ -446,12 +446,11 @@ class Signature(models.Model):
     def confirm(self):
         self.confirmed = True
 
-    def validate_UL_email(self):#take care uncommenting as it is tab/space sensitive.
+    def validate_UL_email(self):
         fail = True
         value = self.email
         studentmailRegex = "^([0-9]{8}$)"
-        lecturerRegex = "^[\.a-zA-Z]{4,20}$" #
-        # "^([\.a-zA-Z]){4,}$)"
+        lecturerRegex = "^[\.a-zA-Z]{4,20}$" 
         studentmail = "@studentmail.ul.ie"
         lecturer = "@ul.ie"
 
