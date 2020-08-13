@@ -17,6 +17,7 @@ from colorfield.fields import ColorField
 from .helpers import sanitize_html
 
 import html
+import re
 
 
 # ----------------------------------- PytitionUser ----------------------------
@@ -419,7 +420,7 @@ class Signature(models.Model):
     first_name = models.CharField(max_length=50, verbose_name=ugettext_lazy("First name"))
     last_name = models.CharField(max_length=50, verbose_name=ugettext_lazy("Last name"))
     phone = models.CharField(max_length=20, blank=True, verbose_name=ugettext_lazy("Phone number"))
-    email = models.EmailField(verbose_name=ugettext_lazy("Email address"))
+    email = models.EmailField(verbose_name=ugettext_lazy("Email address"))#validators=[validate_UL_email]
     confirmation_hash = models.CharField(max_length=128)
     confirmed = models.BooleanField(default=False, verbose_name=ugettext_lazy("Confirmed"))
     petition = models.ForeignKey(Petition, on_delete=models.CASCADE, verbose_name=ugettext_lazy("Petition"))
@@ -427,10 +428,12 @@ class Signature(models.Model):
     date = models.DateTimeField(blank=True, auto_now_add=True, verbose_name=ugettext_lazy("Date"))
     ipaddress = models.TextField(blank=True, null=True)
 
-    def clean(self):
+    def clean(self):#validate email here
         if self.petition.already_signed(self.email):
             if self.petition.signature_set.filter(email = self.email).get(confirmed = True).id != self.id:
                 raise ValidationError(_("You already signed the petition"))
+        if (self.validate_UL_email() == True):
+            raise ValidationError(_("Invalid UL email"))
 
     def save(self, *args, **kwargs):
         self.clean()
@@ -442,6 +445,28 @@ class Signature(models.Model):
 
     def confirm(self):
         self.confirmed = True
+
+    def validate_UL_email(self):#take care uncommenting as it is tab/space sensitive.
+        fail = True
+        value = self.email
+        studentmailRegex = "^([0-9]{8}$)"
+        lecturerRegex = "^[\.a-zA-Z]{4,20}$" #
+        # "^([\.a-zA-Z]){4,}$)"
+        studentmail = "@studentmail.ul.ie"
+        lecturer = "@ul.ie"
+
+        x = value.find(studentmail)
+        if(int(x) == -1):
+            x = value.find(lecturer)
+            if (int(x) == -1):
+                fail = True #pass
+            else:
+                if (re.match(lecturerRegex, value[0:int(x)]) is not None):
+                    fail = False
+        else:
+            if (re.search(studentmailRegex, value[0:int(x)]) is not None):
+                fail = False
+        return (fail)
 
     def __str__(self):
         return html.unescape("[{}:{}] {} {}".format(self.petition.id, "OK" if self.confirmed else "..", self.first_name,
