@@ -1,3 +1,7 @@
+#UL petitions
+There is a need for a specific petition service for the University of Limerick. Historically, petitions relating to the university on public forums such as change.org have been brought to the attention of the university however **anyone** can sign these petition thus a petition with a 1000 signatures means little to them. If we can guarentee that only UL members, staff & students can sign a petiton and verify their signature with an email confirmation. Petitions can be viewed with higher regard.  
+
+
 [![Build Status](http://jenkins.sionneau.net:8080/buildStatus/icon?job=Pytition/master)](http://jenkins.sionneau.net:8080/job/Pytition/job/master/) [![Coverage status](https://img.shields.io/jenkins/coverage/cobertura/http/jenkins.sionneau.net:8080/job/Pytition/job/master.svg)](http://jenkins.sionneau.net:8080/job/Pytition/job/master/lastBuild/cobertura/) [![Documentation Status](https://readthedocs.org/projects/pytition/badge/?version=latest)](https://pytition.readthedocs.io/en/latest/?badge=latest)
 
 # Pytition
