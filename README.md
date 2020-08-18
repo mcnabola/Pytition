@@ -1,4 +1,4 @@
-#UL petitions
+# UL petitions
 There is a need for a specific petition service for the University of Limerick. Historically, petitions relating to the university on public forums such as change.org have been brought to the attention of the university however **anyone** can sign these petition thus a petition with a 1000 signatures means little to them. If we can guarentee that only UL members, staff & students can sign a petiton and verify their signature with an email confirmation. Petitions can be viewed with higher regard.  
 
 
