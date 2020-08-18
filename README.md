@@ -26,12 +26,6 @@
 * [x] Email retry support through the use of a mail queue middleware
 * [x] Nice (multiple) permlink support for each petition
 
-## Future features
-
-* [ ] Support for multi-lingual petition content: [v3.0](https://github.com/pytition/Pytition/milestone/3)
-* [ ] Support for adding several petition templates: [v4.0](https://github.com/pytition/Pytition/milestone/4)
-* [ ] Add optional Mastodon/Diaspora share-icons
-
 ## Install development environment
 
 See [dev/CONTRIBUTE.md](dev/CONTRIBUTE.md)
@@ -39,35 +33,3 @@ See [dev/CONTRIBUTE.md](dev/CONTRIBUTE.md)
 ## Installing in production
 
 See https://pytition.readthedocs.io/en/latest/installation.html#manual-installation-recommended-for-production
-
-## Included dependencies
-
-Those are external projects that are needed and used by Pytition, but included in Pytition source tree:
-
-* Bootstrap 4.2.1
-* JQuery 3.3.1
-* Popper 1.14.6
-* Open Iconic 1.1.1
-* TinyMCE 4.9.2
-* jQuery Smart Wizard 4
-
-## Dependencies
-
-* Python 3
-* Django 2.2.x
-* django-tinymce 2.8.0
-* django-colorfield 0.1.15
-* requests 2.20.x
-* mysqlclient 1.3.13
-* beautifulsoup4 4.6.3
-* django-formtools 2.1
-* bcrypt
-
-## Translations
-
-| Language      | Translation % |
-| ------------- | ------------- |
-| English       | <a href="https://weblate.framasoft.org/engage/pytition/en/?utm_source=widget"><img src="https://weblate.framasoft.org/widgets/pytition/en/pytitions/svg-badge.svg" alt="État de la traduction" /></a>|
-| French  | <a href="https://weblate.framasoft.org/engage/pytition/fr_FR/?utm_source=widget"><img src="https://weblate.framasoft.org/widgets/pytition/fr_FR/pytitions/svg-badge.svg" alt="État de la traduction" /></a>|
-| Italian       | <a href="https://weblate.framasoft.org/engage/pytition/it/?utm_source=widget"><img src="https://weblate.framasoft.org/widgets/pytition/it/pytitions/svg-badge.svg" alt="État de la traduction" /></a>|
-| Occitan       | <a href="https://weblate.framasoft.org/engage/pytition/oc/?utm_source=widget"><img src="https://weblate.framasoft.org/widgets/pytition/oc/pytitions/svg-badge.svg" alt="État de la traduction" /></a> |
