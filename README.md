@@ -34,6 +34,5 @@ There is a need for a specific petition service for the University of Limerick. 
 
 See [dev/CONTRIBUTE.md](dev/CONTRIBUTE.md)
 
-## Installing in production
+## Documentation (Installing in production, configuration, update etc)
 
-See https://pytition.readthedocs.io/en/latest/installation.html#manual-installation-recommended-for-production
