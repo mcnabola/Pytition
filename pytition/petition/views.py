@@ -86,6 +86,8 @@ def index(request):
                 }
         )
 
+def legal(request):
+    return render(request, 'petition/legal.html')
 
 # <int:petition_id>/show_sympa_subscribe_bloc
 # Show sympa subscribe bloc to mass subscribe people to newsletter

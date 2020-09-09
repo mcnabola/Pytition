@@ -12,6 +12,8 @@ urlpatterns = [
     # index
     path('', views.index, name='index'),
     path('search', views.search, name='search'),
+    # legal
+    path('legal', views.legal, name='legal'),
     # Petition
     path('<int:petition_id>/', views.detail, name='detail'),
     path('<int:petition_id>/confirm/<confirmation_hash>', views.confirm, name='confirm'),
