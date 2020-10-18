@@ -219,7 +219,8 @@ DEFAULT_INDEX_THUMBNAIL = "/img/petition_icon.svg"
 #: Example::
 #:
 #:   FOOTER_TEMPLATE = 'layouts/footer.html.example'
-FOOTER_TEMPLATE = None
+FOOTER_TEMPLATE = 'layouts/footer.html'
+#FOOTER_TEMPLATE = None
 
 #INDEX_PAGE_ORGA = "RAP"
 #INDEX_PAGE_USER = "admin"
